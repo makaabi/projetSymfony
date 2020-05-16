@@ -35,7 +35,7 @@ class Reservation
     /**
      *  @ORM\Id
      * @ORM\ManyToOne(targetEntity=Service::class, inversedBy="reservations")
-     * @ORM\JoinColumn(name="id_service", referencedColumnName="id_service",nullable=false,onDelete="CASCADE")
+     * @ORM\JoinColumn(name="id_service", referencedColumnName="id_service",nullable=false,git push -u)
      */
     private $service;
 
