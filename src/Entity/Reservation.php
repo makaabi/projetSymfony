@@ -13,7 +13,7 @@ class Reservation
     /**
      * @ORM\Column(type="integer")
      */
-    public $id;
+    private $id;
 
     /**
      * @ORM\Column(type="datetime")
@@ -42,6 +42,10 @@ class Reservation
     public function getId(): ?int
     {
         return $this->id;
+    }
+    public function setId(int $id)
+    {
+         $this->id=$id;
     }
 
     public function getDater(): ?\DateTimeInterface

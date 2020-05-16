@@ -48,16 +48,8 @@ class ReservationController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{client}", name="reservation_show", methods={"GET"})
-     */
-    public function show(Reservation $reservation): Response
-    {
-        return $this->render('reservation/show.html.twig', [
-            'reservation' => $reservation,
-        ]);
-    }
 
+     
     /**
      * @Route("/{client}/edit", name="reservation_edit", methods={"GET","POST"})
      */
@@ -78,12 +70,16 @@ class ReservationController extends AbstractController
         ]);
     }
 
+
+ 
+   
+   
     /**
      * @Route("/{client}", name="reservation_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Reservation $reservation): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$reservation->getClient(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$reservation->getClient()->getId_cli(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($reservation);
             $entityManager->flush();
@@ -91,4 +87,5 @@ class ReservationController extends AbstractController
 
         return $this->redirectToRoute('reservation_index');
     }
+    
 }
