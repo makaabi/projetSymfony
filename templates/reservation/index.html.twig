@@ -11,6 +11,9 @@
                 <th>Id</th>
                 <th>Dater</th>
                 <th>Etat</th>
+                <th>Client</th>
+                <th>Service</th>
+
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +23,8 @@
                 <td>{{ reservation.id }}</td>
                 <td>{{ reservation.dater ? reservation.dater|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ reservation.etat }}</td>
+                <td>{{ reservation.client }}</td>
+                <td>{{ reservation.service }}</td>
                 <td>
                     <a href="{{ path('reservation_show', {'client': reservation.client}) }}">show</a>
                     <a href="{{ path('reservation_edit', {'client': reservation.client}) }}">edit</a>
