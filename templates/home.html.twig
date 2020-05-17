@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil{% endblock %}
+{% block stylesheets %}
+<style>
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: bisque;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 20px 180px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:black;
+  text-decoration: none;
+
+}
+
+
+#appear
+{
+  position: relative;
+  animation-name: poptitle;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes poptitle {
+
+from{transform: translateX(-900px);}
+to{transform: translateX(0px);}
+}
+</style>
+
+{% endblock %}
+{% block body %}
+<h1 id="appear" class="py-1 mt-2 text-light text-center">Projet</h1>
+        
+        
+        
+<ul>
+  <li><a href="{{ path('client_index') }}">Clients</a></li>
+  <li><a href="{{ path('service_index') }}">Services</a></li>
+  <li><a href="{{ path('reservation_index') }}">Reservations</a></li>
+</ul>
+
+{% endblock %}
