@@ -3,7 +3,7 @@
 {% block title %}Reservation index{% endblock %}
 
 {% block body %}
-    <h1>Reservation index</h1>
+    <h1 class="display-4 py-1 mt-2 text-light text-center">Gestion Réservations</h1>
 
     <table class="table">
         <thead>
@@ -27,22 +27,18 @@
                 
                 <td>
                     
-                    <a href="{{ path('reservation_edit', {'client':reservation.client.id_cli}) }}" >edit</a>
-                    <form  method="post" action="{{ path('reservation_delete', {'client': reservation.client.id_cli}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ reservation.client.id_cli) }}">
-                        <button class="btn btn-danger">Delete</button>
-                    </form>
+                    <a class="btn btn-warning" role="button" href="{{ path('reservation_edit', {'client':reservation.client.id_cli}) }}" >Modifier</a>
+                   
                 </td>
                 
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="6">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('reservation_new') }}">Create new</a>
+    <a class="btn btn-success" role="button" href="{{ path('reservation_new') }}">Ajouter une Réservation</a>
 {% endblock %}

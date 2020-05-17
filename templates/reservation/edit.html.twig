@@ -6,7 +6,8 @@
     <h1>Edit Reservation</h1>
 
     {{ include('reservation/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('reservation/_delete_form.html.twig') }}
 
-    <a class="btn btn-info" role="button" href="{{ path('reservation_index') }}">Retour à la liste</a>
+    <a class="float-right m-2 btn btn-info" role="button" href="{{ path('reservation_index') }}">Retour à la liste</a>
 
 {% endblock %}
