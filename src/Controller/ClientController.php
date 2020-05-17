@@ -48,15 +48,7 @@ class ClientController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id_cli}", name="client_show", methods={"GET"})
-     */
-    public function show(Client $client): Response
-    {
-        return $this->render('client/show.html.twig', [
-            'client' => $client,
-        ]);
-    }
+
 
     /**
      * @Route("/{id_cli}/edit", name="client_edit", methods={"GET","POST"})

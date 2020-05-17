@@ -23,9 +23,9 @@
                 <td>{{ client.adresse }}</td>
                 <td>{{ client.email }}</td>
                 <td>
-                    <a href="{{ path('client_show', {'id_cli': client.id_cli}) }}">show</a>
-                    <a href="{{ path('client_edit', {'id_cli': client.id_cli}) }}">edit</a>
+                    <a class="btn btn-warning" role="button" href="{{ path('client_edit', {'id_cli': client.id_cli}) }}">Modifier</a>
                 </td>
+              
             </tr>
         {% else %}
             <tr>
@@ -34,6 +34,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('client_new') }}">Create new</a>
+    <a class="btn btn-success" role="button" href="{{ path('client_new') }}">Ajouter un Client</a>
 {% endblock %}
