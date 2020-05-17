@@ -3,9 +3,9 @@
 {% block title %}New Service{% endblock %}
 
 {% block body %}
-    <h1>Create new Service</h1>
+<h1 class="py-1 mt-2 text-light text-center">Ajouter un Service</h1>
 
     {{ include('service/_form.html.twig') }}
 
-    <a href="{{ path('service_index') }}">back to list</a>
+    <a class="btn btn-info" role="button" href="{{ path('service_index') }}">Retour à la liste</a>
 {% endblock %}
