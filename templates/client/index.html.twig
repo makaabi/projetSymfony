@@ -27,6 +27,7 @@
                 </td>
               
             </tr>
+
         {% else %}
             <tr>
                 <td colspan="5">no records found</td>
@@ -34,5 +35,8 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="navigation">
+        {{ knp_pagination_render(clients) }}
+    </div>
     <a class="btn btn-success" role="button" href="{{ path('client_new') }}">Ajouter un Client</a>
 {% endblock %}
